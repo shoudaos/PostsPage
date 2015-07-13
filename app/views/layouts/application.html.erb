@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>S123</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+</head>
+<body ng-app="myApp">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div ng-include="'nav/nav.html'"></div>
+    <ui-view></ui-view>
+  </div>
+</div>
+</body>
+</html>
