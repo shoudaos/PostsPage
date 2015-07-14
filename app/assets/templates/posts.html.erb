@@ -1,21 +1,22 @@
 <div class="page-header">
-    <h3>
+  <h4>Post by {{post.user.username}}:</h4>
+  <h2><em>"
         <a ng-show="post.link" href="{{post.link}}">
             {{post.title}}
         </a>
       <span ng-hide="post.link">
         {{post.title}}
-      </span>
-    </h3>
+      </span>"</em>
+    </h2>
 </div>
 
 <div ng-repeat="comment in post.comments">
-    <span class="glyphicon glyphicon-thumbs-up"
-          ng-click="incrementUpvotes(comment)"></span>
-            {{comment.upvotes}} - by {{comment.user.username}}
+     - by {{comment.user.username}}
     <span style="font-size:20px; margin-left:10px;">
       {{comment.body}}
     </span>
+  <p style="float: right; clear: both;">{{comment.upvotes}}<a class="glyphicon glyphicon-thumbs-up"
+        ng-click="incrementUpvotes(comment)"></a></p>
 </div>
 
 <form ng-submit="addComment()"
